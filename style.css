@@ -2,11 +2,32 @@ body {
   margin: 0;
   padding: 0;
 }
-title {
-  font-size: 40px;
-}
+
 #map {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100%; }
+  width: 100%;
+}
+
+#map-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  z-index: 10; /* ensures text appears above map */
+}
+
+#map-text h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+#map-text p {
+  margin: 5px 0 0;
+  font-size: 16px;
+}
