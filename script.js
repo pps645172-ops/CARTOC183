@@ -3,7 +3,7 @@ const map = new mapboxgl.Map({
   container: 'map', // container ID
   style: 'mapbox://styles/sophiameyers/cmh9dpvwu00ay01sq35bb44mx', // your Style URL goes here
   center: [-122.2730, 37.8715], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-  zoom: 9 // starting zoom
+  zoom: 11 // starting zoom
     });
 map.on('load', function() {
   map.addSource('points-data', {
@@ -16,7 +16,7 @@ map.on('load', function() {
         source: 'points-data',
         paint: {
             'circle-color': '#4264FB',
-            'circle-radius': 6,
+            'circle-radius': 4,
             'circle-stroke-width': 2,
             'circle-stroke-color': '#ffffff'
         }
