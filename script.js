@@ -21,21 +21,21 @@ map.on('load', function() {
             'circle-stroke-color': '#ffffff'
         }
     });
-    // Add click event for popups
-    map.on('click', 'points-layer', (e) => {
-      const coordinates = e.features[0].geometry.coordinates.slice();
-            const properties = e.features[0].properties;
+    // This is the click event for popUps
+      map.on('click', 'points-layer', (e) => {
+          // Get coordinates/geometry
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          const properties = e.features[0].properties;
 
-    });
-     // Create popup content using the properties from the data
+          // Create popup content using the properties from the data
            const popupContent = `
               <div>
-                  <h3>${properties.original_*Landmark*}</h3>
-                  <p><strong>Address:</strong> ${properties.original_*Address*}</p>
-                  <p><strong>Architect & Date:</strong> ${original_*Architect & Date*}</p>
-                  <p><strong>Designated:</strong> ${original_* Designated *}</p>
-                  ${properties.attribution_url ? `<p><a href="${properties.attribution_url}" target="_blank">More Information</a></p>` : ''}
-                  ${properties.*Notes* ? `<p><strong>Notes:</strong> ${properties.*Notes*}</p>` : ''}
+                  <h3>${properties.Landmark}</h3>
+                  <p><strong>Address:</strong> ${properties.Address}</p>
+                  <p><strong>Architect & Date:</strong> ${properties.Architect_Date}</p>
+                  <p><strong>Designated:</strong> ${properties.Designated}</p>
+                  ${properties.Link ? `<p><a href="${properties.Link}" target="_blank">More Information</a></p>` : ''}
+                  ${properties.Notes ? `<p><strong>Notes:</strong> ${properties.Notes}</p>` : ''}
               </div>
     `      ;
         // Build and attach popup to coordinates
@@ -44,14 +44,12 @@ map.on('load', function() {
               .setHTML(popupContent)
               .addTo(map);
       });
-
-      // Change cursor to pointer when hovering over points
+       // Change cursor to pointer when hovering over points
       map.on('mouseenter', 'points-layer', () => {
               map.getCanvas().style.cursor = 'pointer';
       });
-
       // Change cursor back when leaving points
       map.on('mouseleave', 'points-layer', () => {
             map.getCanvas().style.cursor = '';
-      });       
+      });
 });
