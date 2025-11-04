@@ -10,7 +10,7 @@ const map = new mapboxgl.Map({
 map.on('load', () => {
   map.addSource('points-data', {
     type: 'geojson',
-    data: 'https://raw.githubusercontent.com/pps645172-ops/CARTOC183/refs/heads/main/data/183data.geosjon'
+    data: 'https://raw.githubusercontent.com/pps645172-ops/CARTOC183/refs/heads/main/data/183data.geojson'
   });
 
   map.addLayer({
