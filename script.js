@@ -18,10 +18,11 @@ map.on('load', () => {
     type: 'circle',
     source: 'points-data',
     paint: {
-      'circle-color': 'F54927',
+      'circle-color': '#F54927',
       'circle-radius': 4,
       'circle-stroke-width': 2,
       'circle-stroke-color': '#000000'
+      'circle-opacity': 1
     }
   });
 
