@@ -18,11 +18,11 @@ map.on('load', () => {
     type: 'circle',
     source: 'points-data',
     paint: {
-    'circle-color': '#FF4500',            // Red-orange fill
+    'circle-color': '#FF4500',           
     'circle-radius': 3,
     'circle-stroke-width': 2,
-    'circle-stroke-color': '#FF4500',     // Same red-orange for border
-    'circle-opacity': 0.7                  // Applies to both fill and strok
+    'circle-stroke-color': '#FF4500',     
+    'circle-opacity': 0.7                  
     }
   });
 
@@ -30,14 +30,14 @@ map.on('load', () => {
     const properties = e.features[0].properties;
     const coordinates = e.features[0].geometry.coordinates.slice();
 
-    // Fly to selected point
+   
     map.flyTo({
       center: coordinates,
       zoom: 15,
       essential: true
     });
 
-    // Build overlay content
+    
     const infoHTML = `
       <h3>${properties.Landmark}</h3>
       <p><strong>Address:</strong> ${properties.Address}</p>
@@ -51,17 +51,17 @@ map.on('load', () => {
     document.getElementById('overlay').classList.add('show');
   });
 
-  // Hide overlay when clicking outside content
+  
   document.getElementById('overlay').addEventListener('click', () => {
     document.getElementById('overlay').classList.remove('show');
   });
 
-  // Prevent overlay content click from closing
+  
   document.querySelector('.overlay-content').addEventListener('click', e => {
     e.stopPropagation();
   });
 
-  // Change cursor style on hover for interactivity
+  
   map.on('mouseenter', 'points-layer', () => {
     map.getCanvas().style.cursor = 'pointer';
   });
